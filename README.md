@@ -1,6 +1,7 @@
 # Running
+With docker and node installed, run
 ```sh
-docker build . -t storefront
-docker run -d -p 3000:3000 storefront
+npm install
+npm run dev
 ```
-(stop it with `docker stop <id-returned-by-run-command>`)
+(run it in the background if you please; stop it with Ctrl-C)

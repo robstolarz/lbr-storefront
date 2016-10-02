@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "node .",
+    "dev": "./dev-helper.sh"
   },
   "author": "Let's Build Rockets Inc.",
   "license": "BSD-3-Clause",
@@ -14,5 +15,8 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "goatee": "git+https://github.com/robstolarz/goatee.git"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2"
   }
 }
