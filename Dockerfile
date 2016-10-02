@@ -7,7 +7,7 @@ RUN apk update && apk add git
 
 # grab dependencies if package.json has been modified
 COPY package.json /tmp/package.json
-RUN cd /tmp && npm install
+RUN cd /tmp && npm install --production
 RUN mkdir /app && cp -a /tmp/node_modules /app
 
 WORKDIR /app
