@@ -17,6 +17,6 @@
     "goatee": "git+https://github.com/robstolarz/goatee.git"
   },
   "devDependencies": {
-    "nodemon": "^1.10.2"
+    "watch": "^0.19.2"
   }
 }
