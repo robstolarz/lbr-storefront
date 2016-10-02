@@ -14,7 +14,8 @@
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "goatee": "git+https://github.com/robstolarz/goatee.git"
+    "goatee": "git+https://github.com/robstolarz/goatee.git",
+    "pg": "^6.1.0"
   },
   "devDependencies": {
     "watch": "^0.19.2"
