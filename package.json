@@ -13,9 +13,12 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
+    "connect-pg-simple": "^3.1.0",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
     "goatee": "git+https://github.com/robstolarz/goatee.git",
-    "pg": "^6.1.0"
+    "pg": "^6.1.0",
+    "pg-promise": "^5.3.4"
   },
   "devDependencies": {
     "watch": "^0.19.2"
