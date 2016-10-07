@@ -12,6 +12,7 @@ services:
       - PGDATABASE=postgres
       - PGUSER=postgres
       - PGPASSWORD=postgres
+      - COOKIE_SECRET=ourhardworkbythesewordsguarded
     links:
       - postgres:postgres
     depends_on:

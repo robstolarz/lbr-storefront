@@ -1,6 +1,11 @@
 <div>
-	<p>Count: {{count}}</p>
-	<form method="post">
+	<h1>Flurbo Counter</h1>
+	<form method="post" action="/api/logout">
+		<p>Welcome, {{user.id}}. <input type="submit" value="Log Out"></p>
+	</form>
+
+	<p>Count: {{user.flurbos}}</p>
+	<form method="post" action="/api/changeCounter">
 		<input name="change" type="number" value="0">
 		<input type="submit">
 	</form>
