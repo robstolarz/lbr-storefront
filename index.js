@@ -42,7 +42,7 @@ var serverPromise = Promise.resolve().then(function(){
 	return getTemplate(path.normalize('./templates/counter.html'))
 		.then(function(template){
 			app.get('/counter',function(req,res){
-				var user = (req.session || {}).flurbos ? req.session : {id: "unregistered user", flurbos: 0};
+				var user = ((req.session || {}).flurbos != undefined) ? req.session : {id: "unregistered user", flurbos: 0};
 				res.send(template({user:user}));
 			});
 			app.post('/api/changeCounter',function(req,res){
