@@ -37,24 +37,7 @@ var serverPromise = Promise.resolve().then(function(){
 		saveUninitialized: false // so CloudFlare can cache the site!
 	}));
 }).then(function(){
-	// set up database
-	var pgp = require('pg-promise')({
-		// TODO: pg-native ?
-	});
-
-	var db = pgp({ // TODO: fork lib to use psql-type defaults
-		host: process.env.PGHOST,
-		database: process.env.PGDATABASE,
-		user: process.env.PGUSER,
-		password: process.env.PGPASSWORD
-	});
-	return db.query('SELECT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_name = \'session\' )').then(function(data){
-		var sessionTableExists = data[0].exists;
-		if(!sessionTableExists){
-			console.log("Session table didn't exist. Creating one now...");
-			return db.any(new pgp.QueryFile(path.join(__dirname,'node_modules/connect-pg-simple/table.sql')));
-		}
-	}).then(Promise.resolve(db));
+	return require('./database')().getDB();
 }).then(function(db){
 	return getTemplate(path.normalize('./templates/counter.html'))
 		.then(function(template){
